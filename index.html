@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Formulario de Registro</title>
+  </head>
+  <!DOCTYPE html>
+<html>
+  <head>
+    <title>Formulario de Registro</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <form id="formulario" action="#" method="post">
+      <label for="nombre">Nombre y Apellidos:</label>
+      <input type="text" id="nombre" name="nombre" required>
+      
+      <label for="fecha-nacimiento">Fecha de Nacimiento:</label>
+        <input type="date" id="fecha-nacimiento" name="fecha-nacimiento">
+      
+      <label for="ocupacion">Ocupación:</label>
+      <input type="text" id="ocupacion" name="ocupacion" required>
+      
+      <label for="contacto-telefono">Teléfono:</label>
+      <input type="tel" id="contacto-telefono" name="contacto-telefono" required>
+      
+      <label for="contacto-email">Email:</label>
+      <input type="email" id="contacto-email" name="contacto -email" required>
+      
+      <label for="nacionalidad">Nacionalidad:</label>
+      <select id="nacionalidad" name="nacionalidad" required>
+        <option value="">Selecciona tu país</option>
+        <option value="argentina">Argentina</option>
+        <option value="bolivia">Bolivia</option>
+        <option value="chile">Chile</option>
+        <option value="colombia">Colombia</option>
+        <option value="costa-rica">Costa Rica</option>
+        <option value="cuba">Cuba</option>
+        <option value="ecuador">Ecuador</option>
+        <option value="el-salvador">El Salvador</option>
+        <option value="españa">España</option>
+        <option value="estados-unidos">Estados Unidos</option>
+        <option value="guatemala">Guatemala</option>
+        <option value="haiti">Haití</option>
+        <option value="honduras">Honduras</option>
+        <option value="mexico">México</option>
+        <option value="nicaragua">Nicaragua</option>
+        <option value="panama">Panamá</option>
+        <option value="paraguay">Paraguay</option>
+        <option value="peru">Perú</option>
+        <option value="puerto-rico">Puerto Rico</option>
+        <option value="republica-dominicana">República Dominicana</option>
+        <option value="uruguay">Uruguay</option>
+        <option value="venezuela">Venezuela</option>
+      </select>
+      
+      
+    <div id="nivel-ingles">
+        <label for="nivel-ingles">Nivel de inglés:</label>
+        <label>
+          <input type="radio" name="nivel-ingles" value="basico">Básico
+        </label>
+        <label>
+          <input type="radio" name="nivel-ingles" value="intermedio">Intermedio
+        </label>
+        <label>
+          <input type="radio" name="nivel-ingles" value="avanzado">Avanzado
+        </label>
+        <label>
+          <input type="radio" name="nivel-ingles" value="fluido">Fluido
+        </label>
+      </div>
+      
+      <label for="lenguajes-programacion">Lenguajes de programación:</label>
+      <select id="lenguajes-programacion" name="lenguajes-programacion" multiple>
+        <option value="javascript">JavaScript</option>
+        <option value="python">Python</option>
+        <option value="java">Java</option>
+        <option value="php">PHP</option>
+        <option value="c">C</option>
+        <option value="c++">C++</option>
+        <option value="ruby">Ruby</option>
+        <option value="swift">Swift</option>
+        <option value="typescript">TypeScript</option>
+      </select>
+      
+      <label for="aptitudes">Aptitudes:</label>
+      <input type="text" id="aptitudes" name="aptitudes" list="lista-aptitudes">
+      <datalist id="lista-aptitudes">
+        <option value="Liderazgo">
+        <option value="Trabajo en equipo">
+        <option value="Comunicación">
+        <option value="Creatividad">
+        <option value="Resolución de problemas">
+      </datalist>
+      
+      <label for="habilidades">Habilidades:</label>
+      <div id="habilidades">
+        <label>
+          <input type="checkbox" name="habilidades" value="analisis">Análisis
+        </label>
+        <label>
+          <input type="checkbox" name="habilidades" value="creatividad">Creatividad
+        </label>
+        <label>
+          <input type="checkbox" name="habilidades" value="adaptabilidad">Adaptabilidad
+        </label>
+        <label>
+          <input type="checkbox" name="habilidades" value="resolucion-problemas">Resolución de problemas
+        </label>
+      </div>
+      
+      <label for="perfil">Perfil:</label>
+      <textarea id="perfil" name="perfil"></textarea>
+      <script>
+        function abrirNuevaPestana() {
+          var nombre = document.getElementById("nombre").value;
+          var correo = document.getElementById("contacto-email").value;
+          var telefono = document.getElementById("contacto-telefono").value;
+          var ingles = document.getElementById("nivel-ingles").value;
+          var ocu = document.getElementById("ocupacion").value;
+          var fecha = document.getElementById("fecha-nacimiento").value;
+          var naci = document.getElementById("nacionalidad").value;
+          var lengua_pro = document.getElementById("lenguajes-programacion").value;
+          var aptitudes = document.getElementById("aptitudes").value;
+          var habilidades = document.getElementsByClassName("habilidades").value;
+          if ((nombre == "" )|| (correo == "" )||( telefono == "") || (ingles == "" )|| (ocu == "" )||( fecha == "" )||( naci == "")||(lengua_pro == "" )||(aptitudes == "" )|| (habilidades == "")) {
+          alert("Todos los campos son obligatorios");
+          }
+          else{
+            var contenido = "<h1>Valores del formulario:</h1>";
+          contenido += "<p>Nombre: " + nombre + "</p>";
+          contenido += "<p>Correo electrónico: " + correo + "</p>";
+          contenido += "<p>Teléfono: " + telefono + "</p>";
+          contenido += "<p>Nivel de Ingles: " + ingles + "</p>";
+          contenido += "<p>Ocupacion: " + ocu + "</p>";
+          contenido += "<p>Fecha de Nacimiento: " + fecha + "</p>";
+          contenido += "<p>Nacionalidad: " + naci + "</p>";
+          contenido += "<p>Lenguaje de Programacion: " + lengua_pro + "</p>";
+          contenido += "<p>Aptitudes: " + aptitudes + "</p>";
+          contenido += "<p>Habilidades: " + habilidades + "</p>";
+          var nuevaPestana = window.open();
+          nuevaPestana.document.write(contenido);
+          }
+          
+        }
+      </script>
+      <button type="button" onclick="abrirNuevaPestana()">Enviar</button>
+    </form>
+  </body>
