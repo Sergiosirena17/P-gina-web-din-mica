@@ -54,22 +54,6 @@
       </select>
       
       
-    <div id="nivel-ingles">
-        <label for="nivel-ingles">Nivel de inglés:</label>
-        <label>
-          <input type="radio" name="nivel-ingles" value="basico">Básico
-        </label>
-        <label>
-          <input type="radio" name="nivel-ingles" value="intermedio">Intermedio
-        </label>
-        <label>
-          <input type="radio" name="nivel-ingles" value="avanzado">Avanzado
-        </label>
-        <label>
-          <input type="radio" name="nivel-ingles" value="fluido">Fluido
-        </label>
-      </div>
-      
       <label for="lenguajes-programacion">Lenguajes de programación:</label>
       <select id="lenguajes-programacion" name="lenguajes-programacion" multiple>
         <option value="javascript">JavaScript</option>
@@ -93,21 +77,6 @@
         <option value="Resolución de problemas">
       </datalist>
       
-      <label for="habilidades">Habilidades:</label>
-      <div id="habilidades">
-        <label>
-          <input type="checkbox" name="habilidades" value="analisis">Análisis
-        </label>
-        <label>
-          <input type="checkbox" name="habilidades" value="creatividad">Creatividad
-        </label>
-        <label>
-          <input type="checkbox" name="habilidades" value="adaptabilidad">Adaptabilidad
-        </label>
-        <label>
-          <input type="checkbox" name="habilidades" value="resolucion-problemas">Resolución de problemas
-        </label>
-      </div>
       
       <label for="perfil">Perfil:</label>
       <textarea id="perfil" name="perfil"></textarea>
@@ -116,14 +85,13 @@
           var nombre = document.getElementById("nombre").value;
           var correo = document.getElementById("contacto-email").value;
           var telefono = document.getElementById("contacto-telefono").value;
-          var ingles = document.getElementById("nivel-ingles").value;
           var ocu = document.getElementById("ocupacion").value;
           var fecha = document.getElementById("fecha-nacimiento").value;
           var naci = document.getElementById("nacionalidad").value;
           var lengua_pro = document.getElementById("lenguajes-programacion").value;
           var aptitudes = document.getElementById("aptitudes").value;
-          var habilidades = document.getElementsByClassName("habilidades").value;
-          if ((nombre == "" )|| (correo == "" )||( telefono == "") || (ingles == "" )|| (ocu == "" )||( fecha == "" )||( naci == "")||(lengua_pro == "" )||(aptitudes == "" )|| (habilidades == "")) {
+          var perfil = document.getElementById("perfil").value;
+          if ((perfil == "")||(nombre == "" )|| (correo == "" )||( telefono == "")|| (ocu == "" )||( fecha == "" )||( naci == "")||(lengua_pro == "" )||(aptitudes == "" )) {
           alert("Todos los campos son obligatorios");
           }
           else{
@@ -131,13 +99,12 @@
           contenido += "<p>Nombre: " + nombre + "</p>";
           contenido += "<p>Correo electrónico: " + correo + "</p>";
           contenido += "<p>Teléfono: " + telefono + "</p>";
-          contenido += "<p>Nivel de Ingles: " + ingles + "</p>";
           contenido += "<p>Ocupacion: " + ocu + "</p>";
           contenido += "<p>Fecha de Nacimiento: " + fecha + "</p>";
           contenido += "<p>Nacionalidad: " + naci + "</p>";
           contenido += "<p>Lenguaje de Programacion: " + lengua_pro + "</p>";
           contenido += "<p>Aptitudes: " + aptitudes + "</p>";
-          contenido += "<p>Habilidades: " + habilidades + "</p>";
+          contenido += "<p>Perfil: " + perfil + "</p>";
           var nuevaPestana = window.open();
           nuevaPestana.document.write(contenido);
           }
